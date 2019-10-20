@@ -30,7 +30,11 @@ namespace VideoServiceTests6_3
         [Test]
         public void GetUnprocessedVideosCsv_NoUnprocesedVideos_ReturnAnEmptyString()
         {
+            _repository.Setup(r => r.GetUnprocessedVideos()).Returns(new List<video>());
 
+            var result = VideoService.GetUpprocessedVideosAsCsv();
+
+            Assert.That(result, Is.EqualTo(""));
         }
     }
 }
