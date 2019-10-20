@@ -36,5 +36,20 @@ namespace VideoServiceTests6_3
 
             Assert.That(result, Is.EqualTo(""));
         }
+    
+        [Test]
+        public void GetUnprocessedVideosCsv_AFewUnprocesedVideos_ReturnAstringWithIdOfUnprocessedVideos()
+        {
+            _repository.Setup(r => r.GetUnprocessedVideos()).Returns(new List<video>()
+            {
+                new Video() { Id = 1 },
+                new Video() { Id = 2 },
+                new Video() { Id = 3}
+            });
+
+            var result = VideoService.GetUpprocessedVideosAsCsv();
+
+            Assert.That(result, Is.EqualTo("1,2,3"));
+        }
     }
 }
