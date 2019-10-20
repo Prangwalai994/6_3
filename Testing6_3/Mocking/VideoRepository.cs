@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Refactoring6_2.Mocking
+namespace Testing6_3.Mocking
 {
     public interface IVideoRepository
     {

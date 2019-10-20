@@ -1,8 +1,8 @@
-﻿using Refactoring6_2.Mocking;
+﻿using Testing6_3.Mocking;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-namespace TestNinja.Mocking
+namespace Testing6_3.Mocking
 {
 public class VideoService
     {
@@ -10,8 +10,8 @@ public class VideoService
         private IVideoRepository _repository;
 
         public VideoService(IFileReader fileReader = null, IVideoRepository repository = null)
-{
-_fileReader = fileReader ?? new FileReader();
+        {
+            _fileReader = fileReader ?? new FileReader();
             _repository = repository ?? new VideoRepository();
         }
 
